@@ -1,0 +1,28 @@
+ReferenceError: C:\Users\Rob Conery\Desktop\Congo Start\views\index.jade:38
+
+
+body is not defined
+    at eval (eval at <anonymous> (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\jade\lib\jade.js:176:8))
+    at exports.compile (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\jade\lib\jade.js:181:12)
+    at Object.exports.render (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\jade\lib\jade.js:216:14)
+    at View.exports.renderFile [as engine] (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\jade\lib\jade.js:243:13)
+    at View.render (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\express\lib\view.js:75:8)
+    at Function.app.render (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\express\lib\application.js:504:10)
+    at ServerResponse.res.render (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\express\lib\response.js:677:7)
+    at exports.index (C:\Users\Rob Conery\Desktop\Congo Start\routes\index.js:7:7)
+    at callbacks (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\express\lib\router\index.js:165:11)
+    at param (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\express\lib\router\index.js:139:11)
+ReferenceError: C:\Users\Rob Conery\Desktop\Congo Start\views\index.jade:38
+
+
+body is not defined
+    at eval (eval at <anonymous> (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\jade\lib\jade.js:176:8))
+    at exports.compile (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\jade\lib\jade.js:181:12)
+    at Object.exports.render (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\jade\lib\jade.js:216:14)
+    at View.exports.renderFile [as engine] (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\jade\lib\jade.js:243:13)
+    at View.render (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\express\lib\view.js:75:8)
+    at Function.app.render (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\express\lib\application.js:504:10)
+    at ServerResponse.res.render (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\express\lib\response.js:677:7)
+    at exports.index (C:\Users\Rob Conery\Desktop\Congo Start\routes\index.js:7:7)
+    at callbacks (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\express\lib\router\index.js:165:11)
+    at param (C:\Users\Rob Conery\Desktop\Congo Start\node_modules\express\lib\router\index.js:139:11)

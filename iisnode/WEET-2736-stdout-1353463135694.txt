@@ -1,0 +1,12 @@
+Express server listening on port \\.\pipe\91aa0e83-f61d-4b57-addb-fd5eb09e6c9f
+[90mGET / [32m200 [90m203ms - 4.42kb[0m
+[90mGET /javascripts/congo/index.js [33m404 [90m17ms[0m
+[90mGET /javascripts/congo/collections.js [33m404 [90m48ms[0m
+[90mGET /javascripts/congo/document.js [33m404 [90m43ms[0m
+[90mGET /javascripts/congo/database.js [33m404 [90m25ms[0m
+[90mGET /javascripts/congo/nav.js [33m404 [90m17ms[0m
+[90mGET /javascripts/congo/query.js [33m404 [90m5ms[0m
+[90mGET /javascripts/ace.js [33m404 [90m21ms[0m
+[90mGET /javascripts/mode-json.js [33m404 [90m11ms[0m
+[90mGET /javascripts/congo/options.js [33m404 [90m12ms[0m
+[90mGET / [32m200 [90m2ms - 32[0m
