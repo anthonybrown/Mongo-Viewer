@@ -2,7 +2,15 @@
 /*global Congo, Backbone, _*/
 
 Congo.Database = Backbone.Model.extend({
-  
+    url: function () {
+      return '/mongo-api/dbs/' + this.id;
+    }
+  , validate: function (attrs) {
+      if (_.isEmpty(attrs.name)) {
+        return "Needs a name retardo";
+      }
+    }
+  , idAttribute: 'name'
 });
 
 Congo.DatabaseCollection = Backbone.Collection.extend({
@@ -10,43 +18,43 @@ Congo.DatabaseCollection = Backbone.Collection.extend({
   , url   : '/mongo-api/dbs'
 });
 
-Congo.DatabaseView = Backbone.View.extend({
-    tagName : 'tr'
-
+Congo.DatabaseOptionView = Congo.View.extend({
+    initialize: function () {
+        this.render();
+    }
+  , template : '#new-db-template'
   , events : {
-        'click a' : 'sayit'
-      , 'click button' : 'sayit'
+      'submit form': 'addDb'
+    }
+  , addDb: function (e) {
+      e.preventDefault();
+
+      var newDbName = $('#newDb').val();
+      var newDb = new Congo.Database({name: newDbName});
+      newDb.save();
+      Congo.databases.add(newDb);
+      $('#newDb').val('');
+    }
+});
+
+Congo.DatabaseView = Congo.View.extend({
+    tagName : 'tr'
+  , template: '#database-list-template'
+  , events : {
+       'click button' : 'removeDb'
+    }
+  , removeDb: function () {
+      var confirmed = confirm('Delete this database?..');
+      if (confirmed) {
+        this.model.destroy();
+        Congo.databases.remove(this.model);
+      }
     }
 
-  , sayit : function () {
-      alert('here we go again');
-    }
-
-  , render  : function () {
-      var template = $('#database-list-template').html();
-      var compiled = _.template(template, this.model.toJSON());
-      $(this.el).html(compiled);
-      return this;
-    }
   });
 
-Congo.DatabaseListView = Backbone.View.extend({
-    initialize : function () {
-      this.collection.bind('reset', this.render, this);
-      this.collection.bind('add', this.render, this);
-      this.collection.bind('remove', this.render, this);
-    }
-  , tagName : 'table'
+Congo.DatabaseListView = Congo.ListView.extend({
+    tagName   : 'table'
   , className : 'table table-striped'
-
-  , render  : function () {
-      var elems = [];
-      this.collection.each(function (item) {
-        var itemView = new Congo.DatabaseView({ model: item });
-        elems.push(itemView.render().el);
-      });
-      //return this;
-      $(this.el).html(elems);
-      $('#database-list').html(this.el);
-    }
-  });
+  , ItemView  : Congo.DatabaseView
+});

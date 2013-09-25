@@ -28,19 +28,27 @@ html(lang='en')
 
   .container
 
-    .row
-      ul#breadcrumbs.breadcrumb.span12
+    #app.row
+      .span12
+        ul#nav.breadcrumb.span12
 
-    .row
-      #database-list.span9
-      #db-options.span3
-        form#addDb
-          input(id='newDb', type='text')
-          button.btn(type='submit')
-            i.icon.icon-plus-sign
-            | Add Db
+      #details
+          script#db-details-template(type='text/template')
+            .row
+              .span12
+                #database-list.span9
+                #database-options.span3.pull-right
 
-    script#database-list-template(type='text/backbone')
+          script#new-db-template(type='text/template')
+            form#addDb
+              input(type='text', id='newDb')
+              button.btn(type='submit')
+                i.icon.icon-glass
+                | Add Db
+
+
+    script#database-list-template(type='text/template')
+
       td(width=60)
         img(src="/img/collections.png", style='height:24px')
       td
@@ -54,6 +62,7 @@ html(lang='en')
 
 
 script(src='/javascripts/congo/index.js')
+script(src='/javascripts/congo/base.js')
 script(src='/javascripts/congo/nav.js')
 script(src='/javascripts/congo/database.js')
 
